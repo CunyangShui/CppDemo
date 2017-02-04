@@ -1,12 +1,15 @@
 ///////////////////////////////////////////////////////////////////////
 // Callables.cpp - Executing Callable Objects                        //
 //                                                                   //
-// Jim Fawcett, CSE687 - Object Oriented Design, Midterm Spring 2016 //
+// Source: Jim Fawcett, CSE687 - Object Oriented Design              //
 ///////////////////////////////////////////////////////////////////////
+//
+// demo of callable object
+//
 
 
 #include <iostream>
-#include "../Utilities/Utilities.h"
+#include "Utilities.h"
 
 // function accepting and executing any callable object
 
@@ -35,7 +38,7 @@ private:
 // example callable object - lambda
 
 std::string msg("Hi again");
-std::function<void()> sfun = [=]() { 
+std::function<void()> sfun = []() {// dont need copy[=] or capture[&] here, because globle variable will be capture automatically
   std::cout << "\n  " << msg.c_str() << " from std::function bound to lambda"; 
 };
 
@@ -53,9 +56,13 @@ int main(){
   // example callable object
 
   std::string newMsg = "Hi one more time";
-  Executor(
-    [=]() { std::cout << "\n  " << newMsg.c_str() << " from lambda"; }
-  );
+    
+  std::function<void()> func = [=]() { std::cout << "\n  " << newMsg.c_str() << " from lambda"; };
+  Executor(func);
+    
+//    Executor(
+//        [=]() { std::cout << "\n  " << newMsg.c_str() << " from lambda"; }
+//    );
 
   std::cout << "\n\n";
 

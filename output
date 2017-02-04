@@ -1,0 +1,7 @@
+  
+  Demo Executing Callable Objects
+ =================================
+  Hello from hello()
+  Hi from MyFunctor
+  Hi again from std::function bound to lambda
+  Hi one more time from lambda
