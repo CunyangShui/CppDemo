@@ -11,25 +11,21 @@
 // function accepting and executing any callable object
 
 template <class CallObj>
-void Executor(CallObj& co)
-{
+void Executor(CallObj& co){
   co();      // invocation of callable object
 }
 // example callable object - function
 
-void hello()
-{
+void hello(){
   std::cout << "\n  Hello from hello()";
 }
 // example callable object - functor
 
-class MyFunctor
-{
+class MyFunctor{
 public:
   MyFunctor(const std::string& msg) : _msg(msg) {}
 
-  void operator()()
-  {
+  void operator()(){
     std::cout << "\n  " << _msg.c_str() << " from MyFunctor";
   }
 private:
@@ -46,8 +42,7 @@ std::function<void()> sfun = [=]() {
 using namespace Utilities;
 using Utils = StringHelper;
 
-int main()
-{
+int main(){
   Utils::Title("Demo Executing Callable Objects");
 
   Executor(hello);
