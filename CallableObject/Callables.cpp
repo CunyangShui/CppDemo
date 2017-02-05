@@ -60,6 +60,7 @@ int main(){
   std::function<void()> func = [=]() { std::cout << "\n  " << newMsg.c_str() << " from lambda"; };
   Executor(func);
     
+// codes below doesn't work on g++ but work on MS C++ compiler 
 //    Executor(
 //        [=]() { std::cout << "\n  " << newMsg.c_str() << " from lambda"; }
 //    );
