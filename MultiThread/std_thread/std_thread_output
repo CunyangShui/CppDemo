@@ -1,0 +1,20 @@
+//output may be variant 
+
+
+main thread                       thread id: 0x7fff7cd9a000
+class member function called      thread id: 0x7fff7cd9a000
+child2 with arg:  11              thread id: 0x700000104000
+member2 with arg1: 44, arg2: 55   thread id: 0x70000028d000
+child1 with no arg                thread id: 0x700000081000
+member1 with no arg               thread id: 0x70000020a000
+child3 with arg1: 22, arg2: 33    thread id: 0x700000187000
+lambda
+lambda
+lambda
+lambda
+lambda
+lambda
+lambda
+lambda
+
+
