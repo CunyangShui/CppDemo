@@ -4,7 +4,7 @@ CFLAGS=-c -std=c++14 -Wall
 all: hello clean
 
 hello: Callables.o Utilities.o
-	$(CC) Callables.o utilities.o -o hello
+	$(CC) Callables.o utilities.o -o a.out
 
 Callables.o: Callables.cpp
 	$(CC) $(CFLAGS) Callables.cpp
